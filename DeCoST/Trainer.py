@@ -425,7 +425,7 @@ class Trainer:
             aug_feasible = (infeasible == False).any(dim=0).any(dim=-1)  # shape: (batch)
 
             reward_masked = aug_reward.masked_fill(infeasible, -1e10) # get feasible results from pomo
-            fsb_no_aug = reward_masked[0,:,:].max(dim=1, keepdim=True).values # shape: (augmentation, batch)
+            fsb_no_aug = reward_masked[0,:,:].max(dim=1, keepdim=False).values # shape: (augmentation, batch)
             fsb_aug = reward_masked.max(dim=0).values.max(dim=-1).values
             no_aug_score, aug_score = -fsb_no_aug, -fsb_aug
 

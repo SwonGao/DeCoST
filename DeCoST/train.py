@@ -83,8 +83,8 @@ if __name__ == "__main__":
     parser.add_argument('--accumulation_steps', type=int, default=1)
 
     # batch and epoch
-    parser.add_argument('--train_episodes', type=int, default=5000, help="the num. of training instances per epoch")
-    parser.add_argument('--val_episodes', type=int, default=5000)
+    parser.add_argument('--train_episodes', type=int, default=10000, help="the num. of training instances per epoch")
+    parser.add_argument('--val_episodes', type=int, default=10000)
     parser.add_argument('--train_batch_size', type=int, default=128)
     parser.add_argument('--validation_batch_size', type=int, default=128)
     parser.add_argument('--problem_size', type=int, default=50)
